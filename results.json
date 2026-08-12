@@ -1,0 +1,47 @@
+[
+  {
+    "provider": "playwright",
+    "url": "https://www.tiktok.com/@yuto1855/video/7669733182761192711",
+    "success": true,
+    "processing_seconds": 17.5,
+    "downloaded_file_size": 2958293,
+    "duration": 11.77,
+    "width": 720,
+    "height": 1280,
+    "codec": "h264",
+    "watermark_detected": true,
+    "auth_required": false,
+    "rate_limited": false,
+    "estimated_cost_article": "$0.00"
+  },
+  {
+    "provider": "playwright",
+    "url": "https://www.tiktok.com/@minnakowaikarayada7/video/7671211573863517458",
+    "success": true,
+    "processing_seconds": 15.0,
+    "downloaded_file_size": 2101024,
+    "duration": 11.24,
+    "width": 720,
+    "height": 1280,
+    "codec": "h264",
+    "watermark_detected": true,
+    "auth_required": false,
+    "rate_limited": false,
+    "estimated_cost_article": "$0.00"
+  },
+  {
+    "provider": "playwright",
+    "url": "https://www.tiktok.com/@zuttowakaku/video/7670096015315242247",
+    "success": true,
+    "processing_seconds": 19.9,
+    "downloaded_file_size": 9428145,
+    "duration": 66.43,
+    "width": 720,
+    "height": 1280,
+    "codec": "h264",
+    "watermark_detected": true,
+    "auth_required": false,
+    "rate_limited": false,
+    "estimated_cost_article": "$0.00"
+  }
+]
