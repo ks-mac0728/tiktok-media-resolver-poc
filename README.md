@@ -1,122 +1,176 @@
-# TikTok Media Resolver PoC
+# TikTok / Instagram Media Resolver PoC
 
-公開TikTok URLから動画Media（MP4）を取得可能かを検証する独立PoCプロジェクト。
+公開 SNS URL から動画 Media（MP4）を取得できるか、どの方式が最適かを検証する独立 PoC。
 
-## 目的
+> **本 PoC は完全に独立**。LA2 repo（`la2-manual-social-asset-builder` / `-v2`）および
+> 本番インフラ（Production Sheets / R2 / Livedoor / AtomPub / GAS / Manual Builder）へは
+> **一切接続しない**。成果物は「取得できるか」の実証と、統合可能な Contract の提示まで。
 
-- TikTok URL → download URL → MP4取得 → local保存 → ffprobe検証 のパイプラインを検証
-- **Playwright**（推奨）・**yt-dlp**・**Apify** の3方式を比較
-- 各方式最低3本の公開TikTok URLで検証
-- 最終的に RECOMMEND / CONDITIONAL / REJECT の3段階でProvider評価
+---
 
-## ディレクトリ構成
+## 結論（要約）
+
+| Platform | 判定 | 実測 | 根拠 |
+|----------|------|------|------|
+| **TikTok** | **READY_FOR_INTEGRATION_CANDIDATE** | 3/3 成功 | Playwright+Chromium の CDN intercept で安定取得。h264 720×1280 |
+| **Instagram** | **CONDITIONAL** | public 1/1, general 1/9 | 真に公開された Reel のみ取得可。login-required は認証必須 |
+
+### 核心的な知見
+
+1. **TikTok は HTTP-only では取得不能**（Slardar WAF が JS 実行を必須とする）。
+   yt-dlp 等は全滅。**Playwright + Chromium で CDN リクエストを `route.fetch()` 捕捉**する方式のみ成功。
+2. **Instagram は 2023 年以降、匿名アクセスを大幅制限**。ログイン不要で再生できる
+   「真に公開された Reel」は極めて稀少。**login-required Reel を取得するには
+   どの方式でも認証情報（ログイン済み Cookie / credentials）が必須**であり、
+   これは外部 API（Apify/RapidAPI）でも同じ制約。
+3. 詳細は [RESULTS.md](RESULTS.md) 参照。
+
+---
+
+## アーキテクチャ
 
 ```
 tiktok-media-resolver-poc/
-├── README.md           # 本ファイル
-├── resolver_test.py    # 検証スクリプト
-├── results.json        # 構造化結果（テスト実行後に生成）
-├── RESULTS.md          # 人間向け要約＋最終評価（テスト実行後に生成）
-├── .env                # Apify API Token（gitignore対象）
-├── .gitignore
-└── downloads/          # 取得MP4保存先（gitignore対象）
+├── README.md                     # 本ファイル
+├── RESULTS.md                    # 実測結果 + per-platform 最終評価
+├── results.json                  # 実測マトリクス（13 URL、成功/失敗/attempts/ffprobe）
+│
+├── resolver_contract.py          # ★ Common Contract（MediaResolveResult / ResolveAttempt / MediaMetadata）
+├── error_codes.py                # ★ エラー分類（LOGIN_REQUIRED / EMPTY_MEDIA_RESPONSE / CDN_NOT_CAPTURED …）
+├── resolve_media.py              # ★ 統合エントリポイント resolve_media(url) → MediaResolveResult（fallback chain）
+│
+├── resolver_test.py              # TikTok 基盤（PlaywrightResolver / ffprobe / Apify 未実測枠）
+├── tiktok_adapter.py             # Adapter: TikTok → MediaResolveResult（内部ロジックは不変更）
+├── instagram_resolver.py         # Instagram 基盤（yt-dlp / Playwright 診断）
+├── instagram_adapter.py          # Adapter: Instagram yt-dlp / browser → MediaResolveResult
+├── instagram_fmp4_remux.py       # Instagram fMP4 断片再構築（Method B、VP9 出力）
+│
+├── test_urls.py                  # テストURLセット（Public Anonymous / General / TikTok）
+├── run_matrix.py                 # 実測マトリクスランナー（results.json 生成）
+├── run_method_a.py               # Method A（yt-dlp 匿名）単体ランナー
+├── external_api_research.md      # Apify/RapidAPI 調査結果（RESEARCH_ONLY）
+│
+├── app.py                        # Streamlit UI（:8503、attempt history / エラーコード表示）
+│
+├── .env                          # （gitignore）Apify token 等
+├── data/                         # （gitignore）PoC専用ブラウザプロファイル
+├── downloads/                    # （gitignore）取得 MP4 保存先
+└── _test_*.py / _debug_*.py      # 調査用スクリプト（fMP4再構築の実証 等）
 ```
 
-## 事前準備
+### Common Contract（resolver_contract.py）
 
-```bash
-# Playwright（推奨）+ ffprobe が必要
-pip3 install playwright
-playwright install chromium
-brew install ffmpeg
+全 Platform / 全方式が統一の `MediaResolveResult` を返す。
 
-# yt-dlp も使う場合
-brew install yt-dlp
-
-# Apifyを使う場合（要API Token）
-pip3 install apify-client python-dotenv
-# .env に APIFY_API_TOKEN=your_token を記入
+```python
+@dataclass
+class MediaResolveResult:
+    url, canonical_url, platform, shortcode   # 入力情報
+    success, final_method                      # 最終結果
+    downloaded_file_path                       # ローカル保存 MP4 パス
+    metadata: MediaMetadata                    # ffprobe（duration/width/height/codec/has_audio）
+    attempts: list[ResolveAttempt]             # ★ 全方式の試行履歴（#8）
+    error_code, error_message                  # 最終エラー + 日本語メッセージ
+    total_seconds, estimated_cost_article      # 所要時間 / 記事あたりコスト
 ```
+
+`ResolveAttempt` は 1 方式の試行を記録する（`method / success / error_code /
+processing_seconds / downloaded_file_size / auth_required / rate_limited`）。
+
+### Fallback chain（resolve_media.py）
+
+成功が実証された方式**のみ**をチェーンに採用（失敗方式は REJECT、チェーンに入れない）。
+
+```
+TikTok:
+  tiktok-playwright           （3/3 成功実証、単一方式で足りる）
+
+Instagram:
+  instagram-ytdlp-anonymous   （primary: h264 完全MP4、公開Reelで成功実証）
+  instagram-browser-fmp4-remux（secondary: fMP4再構築、VP9。公開Reelで成功実証）
+  ※ 外部API（Apify/RapidAPI）は RESEARCH_ONLY のため実行チェーンに含めない
+```
+
+---
 
 ## 使い方
 
 ```bash
-# 1. Playwright でテスト（推奨・3/3成功実証済み）
-python3 resolver_test.py --provider playwright --use-sample-urls
+# 事前準備
+pip3 install playwright streamlit python-dotenv
+playwright install chromium
+brew install ffmpeg yt-dlp
 
-# 2. 個別URLでテスト
-python3 resolver_test.py --provider playwright --urls "URL1" "URL2" "URL3"
+# 1. 実測マトリクス（13 URL）を実行 → results.json 生成
+python3 run_matrix.py
 
-# 3. yt-dlp のみ（全滅することを確認用）
-python3 resolver_test.py --provider ytdlp --use-sample-urls
+# 2. 単一 URL を resolve_media で解決
+python3 -c "from resolve_media import resolve_media; print(resolve_media('URL').summary())"
 
-# 4. Apify（.envにtokenが必要）
-python3 resolver_test.py --provider apify --use-sample-urls
+# 3. Streamlit UI（手動テスト・attempt history 表示）
+python3 -m streamlit run app.py --server.port 8503
 
-# 5. 全Providerテスト
-python3 resolver_test.py --provider all --use-sample-urls
+# 4. Method A（yt-dlp 匿名）単体
+python3 run_method_a.py
 ```
 
-### 出力
+### 記録項目
 
-- `results.json` - 全テスト結果（成功/失敗、所要時間、ファイルサイズ、ffprobe結果など）
-- `RESULTS.md` - 人間向け要約＋ RECOMMEND / CONDITIONAL / REJECT 評価
-- `downloads/` - 取得したMP4ファイル
-```
+`results.json` の各エントリに記録: `success / error_code / error_message /
+wall_seconds（処理秒）/ metadata.file_size / metadata.duration / width / height /
+codec / has_audio / attempts（方式ごとの成功・エラー・所要時間）/ set（URLセット）`。
+watermark・auth・rate-limit は attempt 単位で記録される。
 
-## 検証対象Provider
+---
 
-### 1. Playwright（⭐ RECOMMEND）
-- Playwright + Chromium headlessでTikTok WAFを突破
-- CDN動画リクエストを `route.fetch()` で捕捉しMP4保存
-- 無料・無制限・auth不要
-- 1動画12-20秒（Chromium起動+ページロード）
-- 実測: **3/3成功**（720×1280, H.264 High, 30fps）
+## 方式別評価
 
-### 2. yt-dlp（❌ REJECT）
-- オープンソースの動画ダウンローダー
-- TikTok extractor内蔵
-- 無料・無制限
-- auth不要（公開動画のみ）
-- リスク: TikTokのanti-bot対策によるブロック
+### TikTok
 
-### 3. Apify TikTok Video Scraper（⏸️ CONDITIONAL）
-- Actor名: `clockworks/tiktok-video-scraper`
-- URL: https://apify.com/clockworks/tiktok-video-scraper
-- 入力: `postURLs`（TikTok動画URLの配列）
-- 動画ダウンロード: `shouldDownloadVideos: true` でKey-Value Storeに保存
-- 料金: $1.00 / 1,000 videos（Freeプランで月$5クレジット = 500 videos無料）
-- 認証: API Token（Apify Console → Settings → Integrations）
-- API: `apify-client` Pythonパッケージ経由でREST API呼び出し
-- レスポンス: Datasetにメタデータ（JSON）、Key-Value Storeに動画ファイル
+| 方式 | 結果 | 判定 |
+|------|------|------|
+| `tiktok-playwright`（Chromium CDN intercept） | 3/3 成功、h264 720×1280 | **採用（RECOMMEND）** |
+| `yt-dlp`（HTTP-only） | Slardar WAF で全滅 | REJECT |
+| `apify-*` | 未実測（token なし） | RESEARCH_ONLY |
 
-### 4. Apify TikTok Scraper（⏸️ CONDITIONAL）
-- Actor名: `clockworks/tiktok-scraper`
-- URL: https://apify.com/clockworks/tiktok-scraper
-- 入力: `videoUrls` または `profiles`/`hashtags`/`search`
-- 動画ダウンロード: `shouldDownloadVideos: true`
-- 料金: $1.70 / 1,000 results
-- こちらも実装済み（resolver_test.py で両方対応）
+- 無料・無制限・auth 不要。1 動画 10〜30 秒（Chromium 起動が支配的）。
+- **watermark あり**（TikTok ロゴが焼き込まれる。除去は別途 API が必要）。
+- **断続的な CAPTCHA が発生**（実測で数回に 1 回）。`MAX_RETRIES=2` + 例外リトライで吸収。
+  完全な 100% 安定ではなく、**リトライ前提の運用**が必要。
 
-## 記録項目
+### Instagram
 
-| 項目 | 説明 |
-|------|------|
-| success | 取得成否 |
-| failure_reason | 失敗理由 |
-| processing_seconds | 処理時間（秒） |
-| downloaded_file_size | ファイルサイズ（bytes） |
-| duration | 動画長（秒） |
-| width/height | 解像度 |
-| codec | コーデック |
-| watermark | watermark有無 |
-| auth_required | 認証/cookie要否 |
-| rate_limited | rate-limit/block有無 |
-| estimated_cost_article | 記事1本あたり推定コスト |
+| 方式 | 結果 | 判定 |
+|------|------|------|
+| `instagram-ytdlp-anonymous` | 公開Reel 1/1 成功、h264 | **採用（primary）** |
+| `instagram-browser-fmp4-remux` | 公開Reel で成功実証、VP9。fragile | 採用（secondary、time-box 内で実証） |
+| `instagram-browser`（login なし） | 匿名と同一制限 | 診断用 |
+| 外部 API（Apify/RapidAPI） | logged-out version = 匿名と同一制限 | RESEARCH_ONLY |
 
-## 禁止事項
+- **真に公開された Reel のみ取得可**。login-required Reel（general の大半）は
+  `EMPTY_MEDIA_RESPONSE`（yt-dlp）/ `CDN_NOT_CAPTURED`（browser）。
+- 取得には **credentials（ログイン済み Cookie）が必須**。これは PoC スコープ外。
+- fMP4 再構築は「Instagram 配信は fragmented MP4 で、init+moof 断片を
+  ストリームID（/f2/m367/ 映像, /f2/m86/ 音声）で分離結合 → ffmpeg で mux」する方式。
+  公開Reel では VP9 出力で成功するが、ヒューリスティック依存で fragile。
 
-- LA2 repo変更禁止
-- Production Sheets / R2 / Livedoor 不使用
-- Manual Builder接続禁止
-- Scene抽出 / 記事生成禁止
+---
+
+## 統合準備（8502-integratable contract）
+
+本 PoC の成果は `resolve_media(url) -> MediaResolveResult` という単一関数に集約される。
+これは他サービス（例: 8502 で稼働する Builder 等）が import 可能な形に設計してある。
+
+- `resolver_contract.py` / `error_codes.py` / `resolve_media.py` の 3 ファイルが公開インターフェース。
+- `attempts` 履歴・`error_code`（日本語メッセージ付き）・ffprobe metadata を返す。
+- **本フェーズでは LA2 / 8502 への接続は一切行っていない**（契約の提示までで停止）。
+
+---
+
+## 禁止事項（本 PoC の絶対ルール）
+
+- ❌ LA2 repo（`la2-manual-social-asset-builder` / `-v2`）の変更
+- ❌ Production Sheets / R2 / Livedoor / AtomPub / GAS の使用
+- ❌ Manual Builder 接続
+- ❌ Scene 抽出 / 記事生成
+- ❌ 認証情報・Cookie の git/results/logs への漏出（`data/`・`.env` は gitignore 済み）

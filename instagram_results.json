@@ -1,0 +1,28 @@
+[
+  {
+    "provider": "instagram-ytdlp",
+    "url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+    "canonical_url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+    "shortcode": "DLgMlwmhpah",
+    "url_type": "reel",
+    "success": true,
+    "failure_reason": "",
+    "processing_seconds": 2.3602753329999997,
+    "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+    "downloaded_file_size": 4358401,
+    "duration": 10.702993,
+    "width": 720,
+    "height": 1280,
+    "codec": "h264",
+    "has_audio": true,
+    "watermark_detected": false,
+    "watermark_note": "",
+    "auth_required": false,
+    "rate_limited": false,
+    "rate_limit_note": "",
+    "estimated_cost_article": "$0.00（無料・無制限）",
+    "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 162816,\n      \"duration\": \"10.600000\",\n      \"bit_rate\": \"3208996\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"318\",\n      \"extradata_size\": 50,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\",\n        \"encoder\": \"AVC Coding\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AAC\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.5\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 472002,\n      \"duration\": \"10.702993\",\n      \"bit_rate\": \"72151\",\n      \"nb_frames\": \"231\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"10.702993\",\n    \"size\": \"4358401\",\n    \"bit_rate\": \"3257706\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\"\n    }\n  }\n}",
+    "extra": {},
+    "tested_at": "2026-08-12T07:17:57.491968+00:00"
+  }
+]

@@ -1,0 +1,371 @@
+{
+  "public_anonymous_set": [
+    {
+      "url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+      "canonical_url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+      "platform": "instagram",
+      "shortcode": "DLgMlwmhpah",
+      "success": true,
+      "final_method": "instagram-ytdlp-anonymous",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+      "metadata": {
+        "duration": 10.702993,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 4358401,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 162816,\n      \"duration\": \"10.600000\",\n      \"bit_rate\": \"3208996\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"318\",\n      \"extradata_size\": 50,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\",\n        \"encoder\": \"AVC Coding\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AAC\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.5\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 472002,\n      \"duration\": \"10.702993\",\n      \"bit_rate\": \"72151\",\n      \"nb_frames\": \"231\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"10.702993\",\n    \"size\": \"4358401\",\n    \"bit_rate\": \"3257706\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 1.854550417,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+          "downloaded_file_size": 4358401,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T20:10:28.883874+00:00",
+      "total_seconds": 1.854550417,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    }
+  ],
+  "general_input_set": [
+    {
+      "url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+      "canonical_url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+      "platform": "instagram",
+      "shortcode": "DLgMlwmhpah",
+      "success": true,
+      "final_method": "instagram-ytdlp-anonymous",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+      "metadata": {
+        "duration": 10.702993,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 4358401,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 162816,\n      \"duration\": \"10.600000\",\n      \"bit_rate\": \"3208996\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"318\",\n      \"extradata_size\": 50,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\",\n        \"encoder\": \"AVC Coding\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AAC\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.5\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 472002,\n      \"duration\": \"10.702993\",\n      \"bit_rate\": \"72151\",\n      \"nb_frames\": \"231\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"10.702993\",\n    \"size\": \"4358401\",\n    \"bit_rate\": \"3257706\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 1.5575842919999998,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+          "downloaded_file_size": 4358401,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T20:10:30.475014+00:00",
+      "total_seconds": 1.5575842919999998,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DDIR_4JvRRw/",
+      "canonical_url": "https://www.instagram.com/reel/DDIR_4JvRRw/",
+      "platform": "instagram",
+      "shortcode": "DDIR_4JvRRw",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DDIR_4JvRRw: Instagram API is not granting access\nERROR: [Instagram] DDIR_4JvRRw: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.5167512500000004,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] DDIR_4JvRRw: Instagram API is not granting access\nERROR: [Instagram] DDIR_4JvRRw: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:31.991960+00:00",
+      "total_seconds": 1.5167512500000004,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/p/DCbkKZRPESX/",
+      "canonical_url": "https://www.instagram.com/p/DCbkKZRPESX/",
+      "platform": "instagram",
+      "shortcode": "DCbkKZRPESX",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DCbkKZRPESX: Instagram API is not granting access\nERROR: [Instagram] DCbkKZRPESX: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.3963507920000007,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "post"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] DCbkKZRPESX: Instagram API is not granting access\nERROR: [Instagram] DCbkKZRPESX: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:33.388557+00:00",
+      "total_seconds": 1.3963507920000007,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/reel/CiZT7PkuOHL/",
+      "canonical_url": "https://www.instagram.com/reel/CiZT7PkuOHL/",
+      "platform": "instagram",
+      "shortcode": "CiZT7PkuOHL",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] CiZT7PkuOHL: Instagram API is not granting access\nERROR: [Instagram] CiZT7PkuOHL: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.2935380410000006,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] CiZT7PkuOHL: Instagram API is not granting access\nERROR: [Instagram] CiZT7PkuOHL: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:34.682346+00:00",
+      "total_seconds": 1.2935380410000006,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DH1abc12345/",
+      "canonical_url": "https://www.instagram.com/reel/DH1abc12345/",
+      "platform": "instagram",
+      "shortcode": "DH1abc12345",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DH1abc12345: Instagram API is not granting access\nERROR: [Instagram] DH1abc12345: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.3250877920000006,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] DH1abc12345: Instagram API is not granting access\nERROR: [Instagram] DH1abc12345: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:36.007668+00:00",
+      "total_seconds": 1.3250877920000006,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/reel/C0v_7_uvbBK/",
+      "canonical_url": "https://www.instagram.com/reel/C0v_7_uvbBK/",
+      "platform": "instagram",
+      "shortcode": "C0v_7_uvbBK",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] C0v_7_uvbBK: Instagram API is not granting access\nERROR: [Instagram] C0v_7_uvbBK: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.3149944170000012,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] C0v_7_uvbBK: Instagram API is not granting access\nERROR: [Instagram] C0v_7_uvbBK: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:37.322900+00:00",
+      "total_seconds": 1.3149944170000012,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DM7LmbEJG7S/",
+      "canonical_url": "https://www.instagram.com/reel/DM7LmbEJG7S/",
+      "platform": "instagram",
+      "shortcode": "DM7LmbEJG7S",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DM7LmbEJG7S: Instagram API is not granting access\nERROR: [Instagram] DM7LmbEJG7S: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.5900157499999992,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] DM7LmbEJG7S: Instagram API is not granting access\nERROR: [Instagram] DM7LmbEJG7S: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:38.913156+00:00",
+      "total_seconds": 1.5900157499999992,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/p/DLgMlwmhpah/",
+      "canonical_url": "https://www.instagram.com/p/DLgMlwmhpah/",
+      "platform": "instagram",
+      "shortcode": "DLgMlwmhpah",
+      "success": true,
+      "final_method": "instagram-ytdlp-anonymous",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+      "metadata": {
+        "duration": 10.702993,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 4358401,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 162816,\n      \"duration\": \"10.600000\",\n      \"bit_rate\": \"3208996\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"318\",\n      \"extradata_size\": 50,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\",\n        \"encoder\": \"AVC Coding\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AAC\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.5\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 472002,\n      \"duration\": \"10.702993\",\n      \"bit_rate\": \"72151\",\n      \"nb_frames\": \"231\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"10.702993\",\n    \"size\": \"4358401\",\n    \"bit_rate\": \"3257706\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 1.5817415830000012,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+          "downloaded_file_size": 4358401,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "post"
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T20:10:40.531211+00:00",
+      "total_seconds": 1.5817415830000012,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DEWqXePuwYD/",
+      "canonical_url": "https://www.instagram.com/reel/DEWqXePuwYD/",
+      "platform": "instagram",
+      "shortcode": "DEWqXePuwYD",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DEWqXePuwYD: Instagram API is not granting access\nERROR: [Instagram] DEWqXePuwYD: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.3542174169999992,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] DEWqXePuwYD: Instagram API is not granting access\nERROR: [Instagram] DEWqXePuwYD: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:41.885634+00:00",
+      "total_seconds": 1.3542174169999992,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DFDZe-YROdA/",
+      "canonical_url": "https://www.instagram.com/reel/DFDZe-YROdA/",
+      "platform": "instagram",
+      "shortcode": "DFDZe-YROdA",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DFDZe-YROdA: Instagram API is not granting access\nERROR: [Instagram] DFDZe-YROdA: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.2263462500000024,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "EMPTY_MEDIA_RESPONSE",
+      "error_message": "yt-dlp exit=1: WARNING: [Instagram] DFDZe-YROdA: Instagram API is not granting access\nERROR: [Instagram] DFDZe-YROdA: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+      "tested_at": "2026-08-12T20:10:43.112248+00:00",
+      "total_seconds": 1.2263462500000024,
+      "estimated_cost_article": "$0.00（無料・無制限）"
+    }
+  ]
+}

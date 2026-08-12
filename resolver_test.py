@@ -29,9 +29,19 @@ RESULTS_MD = PROJECT_DIR / "RESULTS.md"
 
 # テスト用の公開TikTok URL（Playwrightで取得実証済みの動画）
 SAMPLE_URLS = [
-    "https://www.tiktok.com/@yuto1855/video/7669733182761192711",
-    "https://www.tiktok.com/@minnakowaikarayada7/video/7671211573863517458",
-    "https://www.tiktok.com/@zuttowakaku/video/7670096015315242247",
+    "https://www.tiktok.com/@bymyside397/video/7668967279207615760",
+    "https://www.tiktok.com/@pet22749v6x/video/7669757165208472852",
+    "https://www.tiktok.com/@koreanmafin/video/7669550728171556103",
+]
+
+# テスト用の公開Instagram Reel URL
+# NOTE: Instagramは公開投稿でも多くの場合ログイン必須。
+# 以下のURLはログイン不要でアクセス可能な真に公開されたReel。
+SAMPLE_INSTAGRAM_URLS = [
+    "https://www.instagram.com/reel/DLgMlwmhpah/",
+    # NOTE: 追加の公開Instagram Reelは環境により異なる。
+    # yt-dlpが "Instagram sent an empty media response" を返す場合、
+    # その投稿はログイン必須。真に公開されたReelのみが取得可能。
 ]
 
 # ---------------------------------------------------------------------------
@@ -267,6 +277,7 @@ class PlaywrightResolver:
     """
 
     PROVIDER = "playwright"
+    MAX_RETRIES = 2  # TikTok CAPTCHAにより初回失敗時リトライ
 
     def resolve(self, url: str) -> TestResult:
         result = TestResult(provider=self.PROVIDER, url=url)
@@ -278,6 +289,7 @@ class PlaywrightResolver:
         output_path = DOWNLOADS_DIR / filename
 
         t_start = time.monotonic()
+        attempts = 0
 
         try:
             from playwright.sync_api import sync_playwright
@@ -285,53 +297,62 @@ class PlaywrightResolver:
             result.failure_reason = "playwright がインストールされていません（pip3 install playwright && playwright install chromium）"
             return result
 
-        video_data = [b""]
+        for retry in range(self.MAX_RETRIES + 1):
+            attempts += 1
+            video_data = [b""]
 
-        try:
-            with sync_playwright() as p:
-                browser = p.chromium.launch(headless=True)
-                context = browser.new_context(
-                    user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                               "AppleWebKit/537.36 (KHTML, like Gecko) "
-                               "Chrome/131.0.0.0 Safari/537.36"
-                )
-                page = context.new_page()
+            try:
+                with sync_playwright() as p:
+                    browser = p.chromium.launch(headless=True)
+                    context = browser.new_context(
+                        user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                                   "AppleWebKit/537.36 (KHTML, like Gecko) "
+                                   "Chrome/131.0.0.0 Safari/537.36"
+                    )
+                    page = context.new_page()
 
-                def handle_route(route):
-                    req_url = route.request.url
-                    if "v16-webapp" in req_url and "/video/tos/" in req_url:
-                        try:
-                            resp = route.fetch()
-                            body = resp.body()
-                            if len(body) > len(video_data[0]):
-                                video_data[0] = body
-                            route.fulfill(response=resp)
-                        except Exception:
+                    def handle_route(route):
+                        req_url = route.request.url
+                        if "v16-webapp" in req_url and "/video/tos/" in req_url:
+                            try:
+                                resp = route.fetch()
+                                body = resp.body()
+                                if len(body) > len(video_data[0]):
+                                    video_data[0] = body
+                                route.fulfill(response=resp)
+                            except Exception:
+                                route.continue_()
+                        else:
                             route.continue_()
-                    else:
-                        route.continue_()
 
-                page.route("**/*", handle_route)
+                    page.route("**/*", handle_route)
 
-                page.goto(url, wait_until="networkidle", timeout=30000)
-                page.wait_for_timeout(8000)
+                    page.goto(url, wait_until="networkidle", timeout=30000)
+                    page.wait_for_timeout(8000)
 
-                browser.close()
+                    browser.close()
 
-        except Exception as e:
-            result.processing_seconds = time.monotonic() - t_start
-            result.failure_reason = f"Playwright error: {type(e).__name__}: {e}"
-            err_str = str(e).lower()
-            if "timeout" in err_str:
-                result.failure_reason += "（ページロードタイムアウト）"
-            return result
+            except Exception as e:
+                result.processing_seconds = time.monotonic() - t_start
+                result.failure_reason = f"Playwright error: {type(e).__name__}: {e}"
+                err_str = str(e).lower()
+                if "timeout" in err_str:
+                    result.failure_reason += "（ページロードタイムアウト）"
+                # 一時的なブラウザ/ネットワーク障害（TargetClosedError等）はリトライする
+                if retry < self.MAX_RETRIES:
+                    continue
+                return result
+
+            if video_data[0] and len(video_data[0]) >= 50000:
+                break  # 取得成功
 
         result.processing_seconds = time.monotonic() - t_start
+        result.extra["attempts"] = attempts
 
         if not video_data[0] or len(video_data[0]) < 50000:
             result.failure_reason = (
                 f"CDN video URLが捕捉できませんでした "
-                f"（captured={len(video_data[0])} bytes）。"
+                f"（captured={len(video_data[0])} bytes, {attempts} attempts）。"
                 f"動画が削除済み・非公開・地域制限の可能性があります。"
             )
             return result
@@ -569,6 +590,158 @@ class ApifyResolver:
 
 
 # ---------------------------------------------------------------------------
+# Resolver: Instagram (yt-dlp)
+# ---------------------------------------------------------------------------
+
+
+class InstagramResolver:
+    """yt-dlpを使用して公開Instagram Reel/Postを取得
+
+    InstagramはTikTokと異なり、Slardar WAFのようなJavaScriptベースの
+    ボット対策はない。しかし多くの投稿はログイン必須。
+    
+    真に公開されたReel（ブラウザのプライベートウィンドウで再生可能なもの）は
+    yt-dlpで認証なしに取得できる。
+
+    Playwrightによるnetwork interceptはInstagramでは機能しない。
+    Instagramの動画はXHR/GraphQL API経由でロードされ、
+    page.route()では捕捉できない。
+
+    したがってInstagramの推奨方式は yt-dlp（認証なし）。
+    """
+
+    PROVIDER = "instagram-ytdlp"
+
+    @staticmethod
+    def normalize_url(url: str) -> str:
+        """URLを正規化。query parameter除去 + /p/ → /reel/ 変換"""
+        # query parameter除去
+        if "?" in url:
+            url = url.split("?")[0]
+        # /p/{shortcode} → /reel/{shortcode}
+        import re as _re
+        m = _re.search(r"instagram\.com/p/([^/?]+)", url)
+        if m:
+            shortcode = m.group(1)
+            url = f"https://www.instagram.com/reel/{shortcode}/"
+        return url.rstrip("/") + "/"
+
+    @staticmethod
+    def extract_shortcode(url: str) -> str:
+        import re as _re
+        m = _re.search(r"instagram\.com/(reel|p)/([^/?]+)", url)
+        if m:
+            return m.group(2)
+        return ""
+
+    def resolve(self, url: str) -> TestResult:
+        result = TestResult(provider=self.PROVIDER, url=url)
+        result.tested_at = datetime.now(timezone.utc).isoformat()
+        result.auth_required = False
+        result.estimated_cost_article = "$0.00（無料・無制限、yt-dlp OSS）"
+
+        # URL normalisation
+        normalized = self.normalize_url(url)
+        shortcode = self.extract_shortcode(normalized)
+        filename = f"{self.PROVIDER}_{shortcode}.mp4"
+        output_path = DOWNLOADS_DIR / filename
+
+        t_start = time.monotonic()
+
+        try:
+            cmd = [
+                "yt-dlp",
+                "--no-playlist",
+                "--format", "mp4/best[ext=mp4]/best",
+                "--output", str(output_path),
+                "--print", "after_move:filepath",
+                "--no-simulate",
+                normalized,
+            ]
+
+            proc = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=120,
+                cwd=str(PROJECT_DIR),
+            )
+
+            result.processing_seconds = time.monotonic() - t_start
+
+            if proc.returncode != 0:
+                stderr = proc.stderr.strip()
+
+                # エラーパターン分類
+                if "empty media response" in stderr.lower():
+                    result.failure_reason = (
+                        "Instagram sent an empty media response. "
+                        "This post requires login. "
+                        "Try opening in browser private window to verify public access."
+                    )
+                elif "login" in stderr.lower():
+                    result.failure_reason = "Login required — this post is not publicly accessible"
+                    result.auth_required = True
+                elif "not a video" in stderr.lower() or "No video formats found" in stderr.lower():
+                    result.failure_reason = "No video found (image-only post?)"
+                elif "404" in stderr or "Not Found" in stderr:
+                    result.failure_reason = "Post deleted or private"
+                else:
+                    result.failure_reason = f"yt-dlp exit={proc.returncode}: {stderr[:300]}"
+
+                if "429" in stderr or "rate" in stderr.lower():
+                    result.rate_limited = True
+                    result.rate_limit_note = "HTTP 429 / rate-limit検出"
+
+                return result
+
+            # 出力ファイルの確認
+            actual_path = output_path
+            if proc.stdout.strip():
+                actual_path = Path(proc.stdout.strip())
+
+            if not actual_path.exists():
+                candidates = list(DOWNLOADS_DIR.glob(f"{output_path.stem}.*"))
+                if candidates:
+                    actual_path = candidates[0]
+                else:
+                    result.failure_reason = f"出力ファイルが見つかりません: {actual_path}"
+                    return result
+
+            result.downloaded_file_path = str(actual_path)
+            result.downloaded_file_size = get_file_size(str(actual_path))
+            result.success = True
+
+            # ffprobe
+            probe = run_ffprobe(str(actual_path))
+            parsed = parse_ffprobe(probe)
+            result.ffprobe_raw = parsed["raw"]
+            result.duration = parsed["duration"]
+            result.width = parsed["width"]
+            result.height = parsed["height"]
+            result.codec = parsed["codec"]
+
+            # Instagram watermark note
+            result.watermark_detected = False
+            result.watermark_note = "Instagram ReelにはTikTokのような強制watermarkはない"
+
+            # 正規化URLを記録
+            result.extra["normalized_url"] = normalized
+            result.extra["shortcode"] = shortcode
+
+        except subprocess.TimeoutExpired:
+            result.processing_seconds = time.monotonic() - t_start
+            result.failure_reason = "yt-dlp タイムアウト（120秒）"
+        except FileNotFoundError:
+            result.failure_reason = "yt-dlp がインストールされていません"
+        except Exception as e:
+            result.processing_seconds = time.monotonic() - t_start
+            result.failure_reason = f"予期せぬエラー: {type(e).__name__}: {e}"
+
+        return result
+
+
+# ---------------------------------------------------------------------------
 # Orchestrator
 # ---------------------------------------------------------------------------
 
@@ -590,6 +763,9 @@ def run_tests(urls: list[str], providers: list[str]) -> list[TestResult]:
                 result = resolver.resolve(url)
             elif provider == "playwright":
                 resolver = PlaywrightResolver()
+                result = resolver.resolve(url)
+            elif provider == "instagram":
+                resolver = InstagramResolver()
                 result = resolver.resolve(url)
             elif provider.startswith("apify-"):
                 actor = provider.replace("apify-", "")
@@ -711,7 +887,7 @@ def main():
     )
     parser.add_argument(
         "--provider",
-        choices=["ytdlp", "playwright", "apify", "all"],
+        choices=["ytdlp", "playwright", "apify", "instagram", "all"],
         default="playwright",
         help="検証対象のProvider（default: playwright）",
     )
@@ -734,21 +910,26 @@ def main():
 
     args = parser.parse_args()
 
-    # URLの準備
-    urls = args.urls
-    if args.use_sample_urls or not urls:
-        urls = SAMPLE_URLS
-        print(f"Using {len(urls)} sample URLs")
-
-    # Providerの準備
+    # Providerの準備（先に決定）
     if args.provider == "ytdlp":
         providers = ["yt-dlp"]
     elif args.provider == "playwright":
         providers = ["playwright"]
     elif args.provider == "apify":
         providers = ["apify-tiktok-video-scraper", "apify-tiktok-scraper"]
+    elif args.provider == "instagram":
+        providers = ["instagram"]
     else:  # all
-        providers = ["yt-dlp", "playwright", "apify-tiktok-video-scraper", "apify-tiktok-scraper"]
+        providers = ["yt-dlp", "playwright", "apify-tiktok-video-scraper", "apify-tiktok-scraper", "instagram"]
+
+    # URLの準備（providerに応じたサンプルURL）
+    urls = args.urls
+    if args.provider == "instagram" and (args.use_sample_urls or not urls):
+        urls = SAMPLE_INSTAGRAM_URLS
+        print(f"Using {len(urls)} Instagram sample URLs")
+    elif args.use_sample_urls or not urls:
+        urls = SAMPLE_URLS
+        print(f"Using {len(urls)} sample URLs")
 
     # downloads/ ディレクトリ作成
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)

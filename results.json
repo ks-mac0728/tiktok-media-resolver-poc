@@ -1,68 +1,619 @@
-[
-  {
-    "provider": "playwright",
-    "url": "https://www.tiktok.com/@yuto1855/video/7669733182761192711",
-    "success": true,
-    "failure_reason": "",
-    "processing_seconds": 17.465078124999998,
-    "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_yuto1855_7669733182761192711.mp4",
-    "downloaded_file_size": 2958293,
-    "duration": 11.766667,
-    "width": 720,
-    "height": 1280,
-    "codec": "h264",
-    "watermark_detected": true,
-    "watermark_note": "TikTok動画には通常右下にTikTokロゴウォーターマークが埋め込まれている",
-    "auth_required": false,
-    "rate_limited": false,
-    "rate_limit_note": "",
-    "estimated_cost_article": "$0.00（無料・無制限、ただしChromiumリソース消費あり）",
-    "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AACv2\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.29\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 518043,\n      \"duration\": \"11.747007\",\n      \"bit_rate\": \"65020\",\n      \"nb_frames\": \"257\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"sample_aspect_ratio\": \"1:1\",\n      \"display_aspect_ratio\": \"9:16\",\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 180736,\n      \"duration\": \"11.766667\",\n      \"bit_rate\": \"1938798\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"353\",\n      \"extradata_size\": 48,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_yuto1855_7669733182761192711.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"11.766667\",\n    \"size\": \"2958293\",\n    \"bit_rate\": \"2011303\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\",\n      \"aigc_info\": \"{\\\"aigc_label_type\\\":0}\",\n      \"comment\": \"vid:v14044g50000d9o5r2vog65ihkom2cag\",\n      \"vid_md5\": \"b10fff530e6983f801388117f6a3d19c\",\n      \"encoder\": \"Lavf58.76.100\"\n    }\n  }\n}",
-    "extra": {},
-    "tested_at": "2026-08-12T00:41:53.636360+00:00"
-  },
-  {
-    "provider": "playwright",
-    "url": "https://www.tiktok.com/@minnakowaikarayada7/video/7671211573863517458",
-    "success": true,
-    "failure_reason": "",
-    "processing_seconds": 15.039285291999995,
-    "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_minnakowaikarayada7_7671211573863517458.mp4",
-    "downloaded_file_size": 2101024,
-    "duration": 11.237007,
-    "width": 720,
-    "height": 1280,
-    "codec": "h264",
-    "watermark_detected": true,
-    "watermark_note": "TikTok動画には通常右下にTikTokロゴウォーターマークが埋め込まれている",
-    "auth_required": false,
-    "rate_limited": false,
-    "rate_limit_note": "",
-    "estimated_cost_article": "$0.00（無料・無制限、ただしChromiumリソース消費あり）",
-    "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AACv2\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.29\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 495552,\n      \"duration\": \"11.237007\",\n      \"bit_rate\": \"65066\",\n      \"nb_frames\": \"246\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"sample_aspect_ratio\": \"1:1\",\n      \"display_aspect_ratio\": \"9:16\",\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 172544,\n      \"duration\": \"11.233333\",\n      \"bit_rate\": \"1423428\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"337\",\n      \"extradata_size\": 48,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_minnakowaikarayada7_7671211573863517458.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"11.237007\",\n    \"size\": \"2101024\",\n    \"bit_rate\": \"1495789\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\",\n      \"aigc_info\": \"{\\\"aigc_label_type\\\":0}\",\n      \"comment\": \"vid:v1c044g50000d9qps9nog65oagridvbg\",\n      \"vid_md5\": \"6337907c6e5c0b87fc4b9e9eaa5fe3a5\",\n      \"encoder\": \"Lavf58.76.100\"\n    }\n  }\n}",
-    "extra": {},
-    "tested_at": "2026-08-12T00:42:11.170782+00:00"
-  },
-  {
-    "provider": "playwright",
-    "url": "https://www.tiktok.com/@zuttowakaku/video/7670096015315242247",
-    "success": true,
-    "failure_reason": "",
-    "processing_seconds": 19.864523040999998,
-    "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_zuttowakaku_7670096015315242247.mp4",
-    "downloaded_file_size": 9428145,
-    "duration": 66.433333,
-    "width": 720,
-    "height": 1280,
-    "codec": "h264",
-    "watermark_detected": true,
-    "watermark_note": "TikTok動画には通常右下にTikTokロゴウォーターマークが埋め込まれている",
-    "auth_required": false,
-    "rate_limited": false,
-    "rate_limit_note": "",
-    "estimated_cost_article": "$0.00（無料・無制限、ただしChromiumリソース消費あり）",
-    "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AACv2\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.29\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 2927534,\n      \"duration\": \"66.383991\",\n      \"bit_rate\": \"64158\",\n      \"nb_frames\": \"1433\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"sample_aspect_ratio\": \"1:1\",\n      \"display_aspect_ratio\": \"9:16\",\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 1020416,\n      \"duration\": \"66.433333\",\n      \"bit_rate\": \"1064465\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"1993\",\n      \"extradata_size\": 48,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_zuttowakaku_7670096015315242247.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"66.433333\",\n    \"size\": \"9428145\",\n    \"bit_rate\": \"1135351\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\",\n      \"aigc_info\": \"{\\\"aigc_label_type\\\":0}\",\n      \"comment\": \"vid:v1c044g50000d9oqesvog65hdcul0ie0\",\n      \"vid_md5\": \"1d44055916e52cd125c474b16f7e8a74\",\n      \"encoder\": \"Lavf58.76.100\"\n    }\n  }\n}",
-    "extra": {},
-    "tested_at": "2026-08-12T00:42:26.272748+00:00"
+{
+  "matrix": [
+    {
+      "url": "https://www.tiktok.com/@bymyside397/video/7668967279207615760",
+      "canonical_url": "https://www.tiktok.com/@bymyside397/video/7668967279207615760/",
+      "platform": "tiktok",
+      "shortcode": "7668967279207615760",
+      "success": true,
+      "final_method": "tiktok-playwright",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_bymyside397_7668967279207615760.mp4",
+      "metadata": {
+        "duration": 5.478005,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 1246739,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AACv2\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.29\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 241580,\n      \"duration\": \"5.478005\",\n      \"bit_rate\": \"66187\",\n      \"nb_frames\": \"122\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"sample_aspect_ratio\": \"1:1\",\n      \"display_aspect_ratio\": \"9:16\",\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 83968,\n      \"duration\": \"5.466667\",\n      \"bit_rate\": \"1749081\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"164\",\n      \"extradata_size\": 48,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_bymyside397_7668967279207615760.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"5.478005\",\n    \"size\": \"1246739\",\n    \"bit_rate\": \"1820719\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\",\n      \"aigc_info\": \"{\\\"aigc_label_type\\\":0}\",\n      \"comment\": \"vid:v14044g50000d9mqa37og65n2hjk0tdg\",\n      \"vid_md5\": \"0505c1cb711f3a88b0e89cb69ead2ac8\",\n      \"encoder\": \"Lavf58.76.100\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "tiktok-playwright",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 27.578600667,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_bymyside397_7668967279207615760.mp4",
+          "downloaded_file_size": 1246739,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "watermark_detected": true,
+            "watermark_note": "TikTok動画には通常右下にTikTokロゴウォーターマークが埋め込まれている",
+            "attempts": 2
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T21:58:32.191771+00:00",
+      "total_seconds": 27.578600667,
+      "estimated_cost_article": "$0.00（無料・無制限、ただしChromiumリソース消費あり）",
+      "set": "tiktok-baseline",
+      "note": "",
+      "wall_seconds": 27.6
+    },
+    {
+      "url": "https://www.tiktok.com/@pet22749v6x/video/7669757165208472852",
+      "canonical_url": "https://www.tiktok.com/@pet22749v6x/video/7669757165208472852/",
+      "platform": "tiktok",
+      "shortcode": "7669757165208472852",
+      "success": true,
+      "final_method": "tiktok-playwright",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_pet22749v6x_7669757165208472852.mp4",
+      "metadata": {
+        "duration": 12.266667,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 780819,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AACv2\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.29\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 539564,\n      \"duration\": \"12.235011\",\n      \"bit_rate\": \"64858\",\n      \"nb_frames\": \"267\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"sample_aspect_ratio\": \"1:1\",\n      \"display_aspect_ratio\": \"9:16\",\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 188416,\n      \"duration\": \"12.266667\",\n      \"bit_rate\": \"436956\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"368\",\n      \"extradata_size\": 48,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_pet22749v6x_7669757165208472852.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"12.266667\",\n    \"size\": \"780819\",\n    \"bit_rate\": \"509229\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\",\n      \"aigc_info\": \"{\\\"aigc_label_type\\\":0}\",\n      \"comment\": \"vid:v14044g50000d9o76kfog65n34ciahgg\",\n      \"vid_md5\": \"386ad131e1232674799546091764584d\",\n      \"encoder\": \"Lavf58.76.100\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "tiktok-playwright",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 15.641893542000002,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_pet22749v6x_7669757165208472852.mp4",
+          "downloaded_file_size": 780819,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "watermark_detected": true,
+            "watermark_note": "TikTok動画には通常右下にTikTokロゴウォーターマークが埋め込まれている",
+            "attempts": 1
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T21:58:47.883158+00:00",
+      "total_seconds": 15.641893542000002,
+      "estimated_cost_article": "$0.00（無料・無制限、ただしChromiumリソース消費あり）",
+      "set": "tiktok-baseline",
+      "note": "",
+      "wall_seconds": 15.7
+    },
+    {
+      "url": "https://www.tiktok.com/@koreanmafin/video/7669550728171556103",
+      "canonical_url": "https://www.tiktok.com/@koreanmafin/video/7669550728171556103/",
+      "platform": "tiktok",
+      "shortcode": "7669550728171556103",
+      "success": true,
+      "final_method": "tiktok-playwright",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_koreanmafin_7669550728171556103.mp4",
+      "metadata": {
+        "duration": 5.338672,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 911768,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AACv2\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.29\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 234432,\n      \"duration\": \"5.315918\",\n      \"bit_rate\": \"65975\",\n      \"nb_frames\": \"118\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"sample_aspect_ratio\": \"1:1\",\n      \"display_aspect_ratio\": \"9:16\",\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt2020nc\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"2997/100\",\n      \"avg_frame_rate\": \"2997/100\",\n      \"time_base\": \"1/11988\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 64000,\n      \"duration\": \"5.338672\",\n      \"bit_rate\": \"1291650\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"160\",\n      \"extradata_size\": 47,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_koreanmafin_7669550728171556103.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"5.338672\",\n    \"size\": \"911768\",\n    \"bit_rate\": \"1366284\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\",\n      \"aigc_info\": \"{\\\"aigc_label_type\\\":0}\",\n      \"comment\": \"vid:v1c044g50000d9nrf9nog65oe5q6b980\",\n      \"vid_md5\": \"3d9a573ac4cdd8211c8367f5be56957d\",\n      \"encoder\": \"Lavf58.76.100\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "tiktok-playwright",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 10.45246675,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/playwright_koreanmafin_7669550728171556103.mp4",
+          "downloaded_file_size": 911768,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "watermark_detected": true,
+            "watermark_note": "TikTok動画には通常右下にTikTokロゴウォーターマークが埋め込まれている",
+            "attempts": 1
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T22:03:08.458288+00:00",
+      "total_seconds": 10.45246675,
+      "estimated_cost_article": "$0.00（無料・無制限、ただしChromiumリソース消費あり）",
+      "set": "tiktok-baseline",
+      "note": "",
+      "wall_seconds": 10.5
+    },
+    {
+      "url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+      "canonical_url": "https://www.instagram.com/reel/DLgMlwmhpah/",
+      "platform": "instagram",
+      "shortcode": "DLgMlwmhpah",
+      "success": true,
+      "final_method": "instagram-ytdlp-anonymous",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+      "metadata": {
+        "duration": 10.702993,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 4358401,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 162816,\n      \"duration\": \"10.600000\",\n      \"bit_rate\": \"3208996\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"318\",\n      \"extradata_size\": 50,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\",\n        \"encoder\": \"AVC Coding\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AAC\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.5\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 472002,\n      \"duration\": \"10.702993\",\n      \"bit_rate\": \"72151\",\n      \"nb_frames\": \"231\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"10.702993\",\n    \"size\": \"4358401\",\n    \"bit_rate\": \"3257706\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 1.686694666000001,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+          "downloaded_file_size": 4358401,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T22:03:10.179658+00:00",
+      "total_seconds": 1.686694666000001,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-public-anonymous",
+      "note": "imaisakura_ の真に公開されたReel。Phase 1で yt-dlp 取得成功（720x1280, h264+aac）。",
+      "wall_seconds": 1.7
+    },
+    {
+      "url": "https://www.instagram.com/reel/DDIR_4JvRRw/",
+      "canonical_url": "https://www.instagram.com/reel/DDIR_4JvRRw/",
+      "platform": "instagram",
+      "shortcode": "DDIR_4JvRRw",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DDIR_4JvRRw: Instagram API is not granting access\nERROR: [Instagram] DDIR_4JvRRw: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.3211030420000043,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 6.329075125000003,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:04:53.360755+00:00",
+      "total_seconds": 7.650178167000007,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "匿名では 'Post isn't available'（ログイン必須の実在Reel）",
+      "wall_seconds": 7.7
+    },
+    {
+      "url": "https://www.instagram.com/p/DCbkKZRPESX/",
+      "canonical_url": "https://www.instagram.com/p/DCbkKZRPESX/",
+      "platform": "instagram",
+      "shortcode": "DCbkKZRPESX",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DCbkKZRPESX: Instagram API is not granting access\nERROR: [Instagram] DCbkKZRPESX: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.6813315830000022,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "post"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 15.712053749999995,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:05:10.755600+00:00",
+      "total_seconds": 17.393385332999998,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "画像投稿（/p/ URL。動画でないため NOT_A_VIDEO 想定）",
+      "wall_seconds": 17.4
+    },
+    {
+      "url": "https://www.instagram.com/reel/CiZT7PkuOHL/",
+      "canonical_url": "https://www.instagram.com/reel/CiZT7PkuOHL/",
+      "platform": "instagram",
+      "shortcode": "CiZT7PkuOHL",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] CiZT7PkuOHL: Instagram API is not granting access\nERROR: [Instagram] CiZT7PkuOHL: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.2359442919999992,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 13.748306416999995,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:05:25.740996+00:00",
+      "total_seconds": 14.984250708999994,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "Phase 1で匿名アクセス不可だった実在Reel",
+      "wall_seconds": 15.0
+    },
+    {
+      "url": "https://www.instagram.com/reel/DH1abc12345/",
+      "canonical_url": "https://www.instagram.com/reel/DH1abc12345/",
+      "platform": "instagram",
+      "shortcode": "DH1abc12345",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DH1abc12345: Instagram API is not granting access\nERROR: [Instagram] DH1abc12345: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.3008370000000014,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 6.927213417000004,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:07:32.106362+00:00",
+      "total_seconds": 8.228050417000006,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "存在しない短縮コード（404 / not found 想定）",
+      "wall_seconds": 8.2
+    },
+    {
+      "url": "https://www.instagram.com/reel/C0v_7_uvbBK/",
+      "canonical_url": "https://www.instagram.com/reel/C0v_7_uvbBK/",
+      "platform": "instagram",
+      "shortcode": "C0v_7_uvbBK",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] C0v_7_uvbBK: Instagram API is not granting access\nERROR: [Instagram] C0v_7_uvbBK: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.347548500000002,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 14.871070541999998,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:07:51.633466+00:00",
+      "total_seconds": 16.218619042,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "匿名で not available（ログイン必須 or 削除済み）",
+      "wall_seconds": 16.2
+    },
+    {
+      "url": "https://www.instagram.com/reel/DM7LmbEJG7S/",
+      "canonical_url": "https://www.instagram.com/reel/DM7LmbEJG7S/",
+      "platform": "instagram",
+      "shortcode": "DM7LmbEJG7S",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DM7LmbEJG7S: Instagram API is not granting access\nERROR: [Instagram] DM7LmbEJG7S: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.35003575,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 8.86354375,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:09:23.201828+00:00",
+      "total_seconds": 10.2135795,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "Phase 1で匿名アクセス不可だった実在Reel",
+      "wall_seconds": 10.2
+    },
+    {
+      "url": "https://www.instagram.com/p/DLgMlwmhpah/",
+      "canonical_url": "https://www.instagram.com/p/DLgMlwmhpah/",
+      "platform": "instagram",
+      "shortcode": "DLgMlwmhpah",
+      "success": true,
+      "final_method": "instagram-ytdlp-anonymous",
+      "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+      "metadata": {
+        "duration": 10.702993,
+        "width": 720,
+        "height": 1280,
+        "codec": "h264",
+        "has_audio": true,
+        "file_size": 4358401,
+        "ffprobe_raw": "{\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_name\": \"h264\",\n      \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n      \"profile\": \"High\",\n      \"codec_type\": \"video\",\n      \"codec_tag_string\": \"avc1\",\n      \"codec_tag\": \"0x31637661\",\n      \"mime_codec_string\": \"avc1.64001f\",\n      \"width\": 720,\n      \"height\": 1280,\n      \"coded_width\": 720,\n      \"coded_height\": 1280,\n      \"has_b_frames\": 2,\n      \"pix_fmt\": \"yuv420p\",\n      \"level\": 31,\n      \"color_range\": \"tv\",\n      \"color_space\": \"bt709\",\n      \"color_transfer\": \"bt709\",\n      \"color_primaries\": \"bt709\",\n      \"chroma_location\": \"left\",\n      \"field_order\": \"progressive\",\n      \"is_avc\": \"true\",\n      \"nal_length_size\": \"4\",\n      \"id\": \"0x1\",\n      \"r_frame_rate\": \"30/1\",\n      \"avg_frame_rate\": \"30/1\",\n      \"time_base\": \"1/15360\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 162816,\n      \"duration\": \"10.600000\",\n      \"bit_rate\": \"3208996\",\n      \"bits_per_raw_sample\": \"8\",\n      \"nb_frames\": \"318\",\n      \"extradata_size\": 50,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"VideoHandler\",\n        \"encoder\": \"AVC Coding\"\n      }\n    },\n    {\n      \"index\": 1,\n      \"codec_name\": \"aac\",\n      \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n      \"profile\": \"HE-AAC\",\n      \"codec_type\": \"audio\",\n      \"codec_tag_string\": \"mp4a\",\n      \"codec_tag\": \"0x6134706d\",\n      \"mime_codec_string\": \"mp4a.40.5\",\n      \"sample_fmt\": \"fltp\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 2,\n      \"channel_layout\": \"stereo\",\n      \"bits_per_sample\": 0,\n      \"initial_padding\": 0,\n      \"id\": \"0x2\",\n      \"r_frame_rate\": \"0/0\",\n      \"avg_frame_rate\": \"0/0\",\n      \"time_base\": \"1/44100\",\n      \"start_pts\": 0,\n      \"start_time\": \"0.000000\",\n      \"duration_ts\": 472002,\n      \"duration\": \"10.702993\",\n      \"bit_rate\": \"72151\",\n      \"nb_frames\": \"231\",\n      \"extradata_size\": 4,\n      \"disposition\": {\n        \"default\": 1,\n        \"dub\": 0,\n        \"original\": 0,\n        \"comment\": 0,\n        \"lyrics\": 0,\n        \"karaoke\": 0,\n        \"forced\": 0,\n        \"hearing_impaired\": 0,\n        \"visual_impaired\": 0,\n        \"clean_effects\": 0,\n        \"attached_pic\": 0,\n        \"timed_thumbnails\": 0,\n        \"non_diegetic\": 0,\n        \"captions\": 0,\n        \"descriptions\": 0,\n        \"metadata\": 0,\n        \"dependent\": 0,\n        \"still_image\": 0,\n        \"multilayer\": 0\n      },\n      \"tags\": {\n        \"language\": \"und\",\n        \"handler_name\": \"SoundHandler\"\n      }\n    }\n  ],\n  \"format\": {\n    \"filename\": \"/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4\",\n    \"nb_streams\": 2,\n    \"nb_programs\": 0,\n    \"nb_stream_groups\": 0,\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"format_long_name\": \"QuickTime / MOV\",\n    \"start_time\": \"0.000000\",\n    \"duration\": \"10.702993\",\n    \"size\": \"4358401\",\n    \"bit_rate\": \"3257706\",\n    \"probe_score\": 100,\n    \"tags\": {\n      \"major_brand\": \"isom\",\n      \"minor_version\": \"512\",\n      \"compatible_brands\": \"isomiso2avc1mp41\"\n    }\n  }\n}"
+      },
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": true,
+          "error_code": "",
+          "error_message": "",
+          "processing_seconds": 1.5641432500000008,
+          "downloaded_file_path": "/Users/saitokosuke/Documents/projects/tiktok-media-resolver-poc/downloads/instagram-ytdlp_DLgMlwmhpah.mp4",
+          "downloaded_file_size": 4358401,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "post"
+          }
+        }
+      ],
+      "error_code": "",
+      "error_message": "",
+      "tested_at": "2026-08-12T22:09:24.803193+00:00",
+      "total_seconds": 1.5641432500000008,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "同一shortcodeの /p/ URL（正規化テスト）",
+      "wall_seconds": 1.6
+    },
+    {
+      "url": "https://www.instagram.com/reel/DEWqXePuwYD/",
+      "canonical_url": "https://www.instagram.com/reel/DEWqXePuwYD/",
+      "platform": "instagram",
+      "shortcode": "DEWqXePuwYD",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DEWqXePuwYD: Instagram API is not granting access\nERROR: [Instagram] DEWqXePuwYD: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.5076049999999999,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 8.928475167000002,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:09:35.239945+00:00",
+      "total_seconds": 10.436080167000002,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "匿名で not available",
+      "wall_seconds": 10.4
+    },
+    {
+      "url": "https://www.instagram.com/reel/DFDZe-YROdA/",
+      "canonical_url": "https://www.instagram.com/reel/DFDZe-YROdA/",
+      "platform": "instagram",
+      "shortcode": "DFDZe-YROdA",
+      "success": false,
+      "final_method": "",
+      "downloaded_file_path": "",
+      "metadata": null,
+      "attempts": [
+        {
+          "method": "instagram-ytdlp-anonymous",
+          "success": false,
+          "error_code": "EMPTY_MEDIA_RESPONSE",
+          "error_message": "yt-dlp exit=1: WARNING: [Instagram] DFDZe-YROdA: Instagram API is not granting access\nERROR: [Instagram] DFDZe-YROdA: Instagram sent an empty media response. Check if this post is accessible in your browser without being logged-in. If it is not, then use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Otherwise, if the post is accessible in browser without being logged-in, please report",
+          "processing_seconds": 1.5034922920000007,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {
+            "url_type": "reel"
+          }
+        },
+        {
+          "method": "instagram-browser-fmp4-remux",
+          "success": false,
+          "error_code": "CDN_NOT_CAPTURED",
+          "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+          "processing_seconds": 8.973525791000004,
+          "downloaded_file_path": "",
+          "downloaded_file_size": 0,
+          "auth_required": false,
+          "rate_limited": false,
+          "extra": {}
+        }
+      ],
+      "error_code": "CDN_NOT_CAPTURED",
+      "error_message": "CDN video segment を捕捉できませんでした。この投稿はログイン必須・削除済み・非公開の可能性があります。",
+      "tested_at": "2026-08-12T22:09:45.717629+00:00",
+      "total_seconds": 10.477018083000004,
+      "estimated_cost_article": "$0.00（無料・無制限）",
+      "set": "instagram-general-input",
+      "note": "匿名で not available",
+      "wall_seconds": 10.5
+    }
+  ],
+  "summary": {
+    "sets": {
+      "tiktok-baseline": {
+        "success": 3,
+        "total": 3,
+        "rate": "3/3"
+      },
+      "instagram-public-anonymous": {
+        "success": 1,
+        "total": 1,
+        "rate": "1/1"
+      },
+      "instagram-general-input": {
+        "success": 1,
+        "total": 9,
+        "rate": "1/9"
+      }
+    },
+    "platforms": {
+      "tiktok": {
+        "success": 3,
+        "total": 3,
+        "rate": "3/3"
+      },
+      "instagram": {
+        "success": 2,
+        "total": 10,
+        "rate": "2/10"
+      }
+    }
   }
-]
+}
