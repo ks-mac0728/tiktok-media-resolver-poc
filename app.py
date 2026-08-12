@@ -65,10 +65,6 @@ if fetch_clicked and url.strip():
 
 result = st.session_state.result
 
-if result is not None:
-    st.divider()
-    _display_result(result)
-
 
 # ---------------------------------------------------------------------------
 # Display helpers
@@ -153,6 +149,15 @@ def _display_attempts(result):
                 st.caption(a.error_message)
                 if a.extra:
                     st.json(a.extra)
+
+
+# ---------------------------------------------------------------------------
+# Result display（helpers 定義後に実行）
+# ---------------------------------------------------------------------------
+
+if result is not None:
+    st.divider()
+    _display_result(result)
 
 
 # ---------------------------------------------------------------------------
